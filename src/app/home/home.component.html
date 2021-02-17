@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-header>
+    <button mat-button (click)="logout()">Logout</button>
+  </mat-card-header>
+  <mat-card-content>
+    <nav mat-tab-nav-bar>
+      <a mat-tab-link routerLink="/home/catlog" routerLinkActive #catlogTab="routerLinkActive"
+        [active]="catlogTab.isActive">Catlog</a>
+      <a mat-tab-link routerLink="/home/search" routerLinkActive #searchTab="routerLinkActive"
+        [active]="searchTab.isActive">Search</a>
+      <a mat-tab-link routerLink="/home/reports" routerLinkActive #othersTab="routerLinkActive" [active]="othersTab.isActive">
+        Reports
+      </a>
+      <a mat-tab-link routerLink="/home/transfer" routerLinkActive #transferTab="routerLinkActive" [active]="transferTab.isActive">
+        Transfer
+      </a>
+      <a mat-tab-link routerLink="/home/smart" routerLinkActive #smartTab="routerLinkActive" [active]="smartTab.isActive">
+        Transfer
+      </a>
+    </nav>
+    <router-outlet></router-outlet>
+  </mat-card-content>
+</mat-card>

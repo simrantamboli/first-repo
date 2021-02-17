@@ -1,0 +1,50 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <mat-vertical-stepper [linear]="isLinear" #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Request Payment</ng-template>
+                <p>{{time | date: 'short'}}</p>
+                <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup">
+              <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Process Payment</ng-template>
+                <p>{{time | date: 'short'}}</p>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Sending</ng-template>
+              <p>You have recieved.</p>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="stepper.reset()">Reset</button>
+              </div>
+            </mat-step>
+            
+          </mat-vertical-stepper>
+          <div class="email" style="display: inline-block;">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <a href="#"><i class="fa fa-envelope"></i></a>
+             <p style="display: inline-block; text-align: right;padding-left: 10px;">  Receipt send to your Email</p>
+    
+        </div>
+    </mat-drawer>
+    <div class="example-sidenav-content">
+        <div>
+        <h3>Track EveryThing Live</h3>
+      <button type="button" mat-button (click)="drawer.toggle()">
+        Toggle sidenav
+      </button>
+    </div>
+    </div>
+  
+  </mat-drawer-container>
+  
