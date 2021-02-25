@@ -1,3 +1,4 @@
+import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,5 +12,6 @@ export class SmartremComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+CreateAccount(){
+}
 }
